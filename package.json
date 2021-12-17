@@ -2,6 +2,9 @@
   "name": "cryptoibero-storybook",
   "version": "0.1.0",
   "private": true,
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@storybook/addon-actions": "^6.4.9",
@@ -27,11 +30,11 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    
+    "build": "rollup -c",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006"
+
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +55,13 @@
     ]
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.1",
+    "postcss": "^8.4.5",
+    "rollup": "^2.61.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.31.1",
     "storybook-addon-material-ui": "^0.9.0-alpha.24"
   }
 }
