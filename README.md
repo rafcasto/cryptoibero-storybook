@@ -2,14 +2,38 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## Branching Strategy
+
+### Gitflow 
+![Alt text](assets/branching_strategy.svg)
+
+- Developer to create a **Feature branch** from **develop branch** 
+- A **Feature branch** represent a work unit (User story)
+- On completition of user story a pull request is created  from **Feature branch** to **develop branch** 
+- Pull request is approved by lead developer 
+- **Feature branch** code get merge into **develop** 
+- Once a release is ready, a **release branch** is created
+- Any bug fixes for that release are made on a **bugfix branch** from that release branch
+### Naming conventions 
+- Feature branch naming convention  
+    > Feature/ddmmyyyy/UserStoryNumber
+- Release branch naming convention follow semantic versioning 
+    > Release/release.mayor.minor.patch example Release/release.0.1.0
+
+
+### Development guidelines 
+
+[Click here to Storybook guidelines](https://storybook.js.org/docs/react/writing-stories/introduction)
+
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn storybook`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
