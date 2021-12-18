@@ -22,7 +22,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     > Release/release.mayor.minor.patch example Release/release.0.1.0
 
 
-### Development guidelines 
+### yDevelopment guidelines 
 
 [Click here to Storybook guidelines](https://storybook.js.org/docs/react/writing-stories/introduction)
 
