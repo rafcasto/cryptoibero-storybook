@@ -7,6 +7,10 @@
   "types": "lib/index.d.ts",
   "dependencies": {
     "@babel/core": "^7.16.0",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.4",
+    "@mui/material": "^5.2.4",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-docs": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
@@ -30,7 +34,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "build-storybook",
+    "package": "rollup -c",
     "test": "react-scripts test",
     "storybook": "start-storybook -p 6006"
   },
@@ -55,6 +60,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.1",
+    "chromatic": "^6.2.3",
     "postcss": "^8.4.5",
     "rollup": "^2.61.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
