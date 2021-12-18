@@ -1,7 +1,7 @@
 {
-  "name": "cryptoibero-storybook",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@rafcasto/cryptoibero-storybook",
+  "version": "0.1.1",
+  "private": false,
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
@@ -30,11 +30,9 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    
     "build": "rollup -c",
     "test": "react-scripts test",
     "storybook": "start-storybook -p 6006"
-
   },
   "eslintConfig": {
     "extends": [
@@ -63,5 +61,19 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.31.1",
     "storybook-addon-material-ui": "^0.9.0-alpha.24"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafcasto/cryptoibero-storybook.git"
+  },
+  "author": "RafaelC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafcasto/cryptoibero-storybook/issues"
+  },
+  "homepage": "https://github.com/rafcasto/cryptoibero-storybook#readme"
 }
