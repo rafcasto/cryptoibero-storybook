@@ -13,7 +13,7 @@ export const HeaderTable = ({headers}:HeaderTableProps) =>
     <TableHead>
         <TableRow>
             {headers.map((header)=> (
-                <TableCell align='right'>{header}</TableCell>
+                <TableCell key={header} align='left'><b>{header}</b></TableCell>
             ))}
         </TableRow>
     </TableHead>);
