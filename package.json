@@ -1,6 +1,6 @@
 {
   "name": "@rafcasto/cryptoibero-storybook",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -66,6 +66,10 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.31.1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "directories": {
