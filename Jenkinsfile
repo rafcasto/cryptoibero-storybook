@@ -40,11 +40,16 @@ pipeline {
         }
 
     }
-    post { 
-        always { 
-            sh 'rm -rf /var/lib/jenkins/workspace/component-library-*'
-            sh 'cd /var/lib/jenkins/workspace'
-            sh 'ls'
+    post {
+        // Clean after build
+        always {
+            cleanWs(cleanWhenNotBuilt: false,
+                    deleteDirs: true,
+                    disableDeferredWipeout: true,
+                    notFailBuild: true,
+                    patterns: [[pattern: '.gitignore', type: 'INCLUDE'],
+                               [pattern: '.propsfile', type: 'EXCLUDE']])
         }
     }
+    
 }
