@@ -40,4 +40,11 @@ pipeline {
         }
 
     }
+    post { 
+        always { 
+            sh 'rm -rf /var/lib/jenkins/workspace/component-library-*'
+            sh 'cd /var/lib/jenkins/workspace'
+            sh 'ls'
+        }
+    }
 }
