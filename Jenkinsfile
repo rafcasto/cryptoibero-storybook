@@ -36,7 +36,6 @@ pipeline {
         }
          stage('push') {
             steps {
-                
                 sh 'git push'
             }
         }
