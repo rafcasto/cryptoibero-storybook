@@ -1,5 +1,10 @@
 pipeline {
-     agent { docker { image 'rafcasto/nodejs-build' } }
+     agent { docker 
+        { 
+            image 'rafcasto/nodejs-build'
+            args '-e NPM_TOKEN=$NPM_TOKEN' 
+        } 
+     }
      environment {
         npm_config_cache = 'npm-cache'
     }
