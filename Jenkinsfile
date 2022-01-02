@@ -23,12 +23,9 @@ pipeline {
             steps {
                 sh 'git config  user.email "info@opennet.co.nz"'
                 sh 'git config  user.name "Jenkins Build"'
-                try
+                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
                 {
                    sh 'git tag -d $(git tag -l)'
-                }catch(err)
-                {
-                    echo 'No tags were found'
                 }
                 sh 'npm version minor'
                 sh 'npm publish'
