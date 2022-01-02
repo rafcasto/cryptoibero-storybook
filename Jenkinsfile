@@ -2,7 +2,7 @@ pipeline {
      agent { docker 
         { 
             image 'rafcasto/nodejs-build'
-            args '-e NPM_TOKEN=$NPM_TOKEN -u root' 
+            args '-e NPM_TOKEN=$NPM_TOKEN' 
         } 
      }
      environment {
@@ -21,6 +21,7 @@ pipeline {
         }
         stage('publish') {
             steps {
+                sh 'echo $NPM_TOKEN'
                 sh 'git config  user.email "info@opennet.co.nz"'
                 sh 'git config  user.name "Jenkins Build"'
                  catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
