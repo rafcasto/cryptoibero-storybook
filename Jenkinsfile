@@ -2,7 +2,7 @@ pipeline {
      agent { docker 
         { 
             image 'rafcasto/nodejs-build'
-            args '-e NPM_TOKEN=$NPM_TOKEN' 
+            args '-e NPM_TOKEN=$NPM_TOKEN -e GIT_TOKEN=$GIT_TOKEN' 
         } 
      }
      environment {
@@ -22,8 +22,8 @@ pipeline {
         stage('publish') {
             steps {
                 sh 'echo $NPM_TOKEN'
-                sh 'git config  user.email "info@opennet.co.nz"'
-                sh 'git config  user.name "Jenkins Build"'
+                sh 'git config  user.email "rafcasto@gmail.com"'
+                sh 'git config  user.name "rafcasto"'
                  catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
                 {
                    sh 'git tag -d $(git tag -l)'
@@ -34,6 +34,7 @@ pipeline {
         }
          stage('push') {
             steps {
+                sh 'git remote add origin "https://$GIT_TOKEN@github.com/rafcasto/cryptoibero-storybook.git"'
                 sh 'git push origin HEAD:master --force'
             }
         }
