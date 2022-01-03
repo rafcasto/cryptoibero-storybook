@@ -29,8 +29,8 @@ pipeline {
                 {
                    sh 'git tag -d $(git tag -l)'
                 }
-                sh 'npm version minor'
                 sh 'npm publish'
+                sh 'npm version minor'
             }
         }
          stage('push') {
@@ -44,12 +44,7 @@ pipeline {
     post {
         // Clean after build
         always {
-            cleanWs(cleanWhenNotBuilt: false,
-                    deleteDirs: true,
-                    disableDeferredWipeout: true,
-                    notFailBuild: true,
-                    patterns: [[pattern: '.gitignore', type: 'INCLUDE'],
-                               [pattern: '.propsfile', type: 'EXCLUDE']])
+            cleanWs()
         }
     }
     
