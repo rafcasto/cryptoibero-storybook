@@ -34,8 +34,7 @@ pipeline {
         }
          stage('push') {
             steps {
-                sh 'git remote add origin "https://$GIT_TOKEN@github.com/rafcasto/cryptoibero-storybook.git"'
-                sh 'git push origin HEAD:master --force'
+                sh 'git push "https://$GIT_TOKEN@github.com/rafcasto/cryptoibero-storybook.git"'
             }
         }
 
