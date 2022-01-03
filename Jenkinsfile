@@ -11,6 +11,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'git checkout master'
                 sh 'npm install'
             }
         }
@@ -34,6 +35,7 @@ pipeline {
         }
          stage('push') {
             steps {
+              
                 sh 'git push "https://$GIT_TOKEN@github.com/rafcasto/cryptoibero-storybook.git"'
             }
         }
