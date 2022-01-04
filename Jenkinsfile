@@ -2,7 +2,7 @@ pipeline {
      agent { docker 
         { 
             image 'rafcasto/nodejs-build'
-            args '-e NPM_TOKEN=$NPM_TOKEN -e GIT_TOKEN=$GIT_TOKEN -v /var/run/docker.sock:/var/run/docker.sock:rw -v /usr/bin/docker:/usr/bin/docker:rw -v /var/lib/jenkins/kube/kubeconfig.yml:/home/node/kube/kubeconfig.yml' 
+            args '-e NPM_TOKEN=$NPM_TOKEN -e GIT_TOKEN=$GIT_TOKEN -v /var/run/docker.sock:/var/run/docker.sock:rw -v /usr/bin/docker:/usr/bin/docker:rw -v /usr/local/bin/kubectl:/usr/local/bin/kubectl  -v /var/lib/jenkins/kube/kubeconfig.yml:/home/node/kube/kubeconfig.yml' 
         } 
      }
      environment {
