@@ -2,7 +2,7 @@ pipeline {
      agent { docker 
         { 
             image 'rafcasto/nodejs-build'
-            args '-e NPM_TOKEN=$NPM_TOKEN -e GIT_TOKEN=$GIT_TOKEN -v /var/run/docker.sock:/var/run/docker.sock:rw -v /usr/bin/docker:/usr/bin/docker:rw' 
+            args '-e NPM_TOKEN=$NPM_TOKEN -e GIT_TOKEN=$GIT_TOKEN -v /var/run/docker.sock:/var/run/docker.sock:rw -v /usr/bin/docker:/usr/bin/docker:rw -v /var/lib/jenkins/kube/kubeconfig.yml:/home/node/kube/kubeconfig.yml' 
         } 
      }
      environment {
@@ -48,6 +48,20 @@ pipeline {
                     }
                 }
                
+            }
+        }
+
+        stage('deploy'){
+            steps {
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
+                   sh 'kubectl delete svc storybook-svc -n storybook --kubeconfig=/home/node/kube/kubeconfig.yml'
+                   sh 'kubectl delete -n storybook  deployment storybook-dep --kubeconfig=/home/node/kube/kubeconfig.yml'
+                }
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
+                   sh 'kubectl create namespace storybook --kubeconfig=/home/node/kube/kubeconfig.yml'
+                }
+                sh 'kubectl apply -f storybook-deployment.yaml -n storybook --kubeconfig=/home/node/kube/kubeconfig.yml'
+                sh 'kubectl apply -f storybook-service.yaml -n storybook --kubeconfig=/home/node/kube/kubeconfig.yml'
             }
         }
 
