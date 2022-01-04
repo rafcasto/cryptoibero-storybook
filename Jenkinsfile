@@ -47,7 +47,9 @@ pipeline {
                         dockerImage.push()
                     }
                 }
-               
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
+                    sh 'docker rmi $(docker images)'
+                }
             }
         }
 
