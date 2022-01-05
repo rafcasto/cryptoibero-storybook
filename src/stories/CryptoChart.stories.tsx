@@ -14,12 +14,14 @@ export default {
 const Template: ComponentStory<typeof CryptoChart> = (args) => <CryptoChart {...args} />; 
 
 export const defaultChart = Template.bind({}); 
+const labels = ['test','test1','test3']; 
+const data = [10.2,5.3,15]; 
+const chartInfo = {
+    data:data,
+    labels:labels 
+}
 defaultChart.args= {
-  labelsText:['test','test1','test3'],
-  data:[10.2,5.3,15],
-  label:'this is a test',
-  width:600,
-  height:400,
-  boderColor:'red',
-  fillColor:'green'   
+  chartInfo:chartInfo ,
+  backgroundColor:'rgba(0, 128, 0, 0.52)',
+  borderColor:'rgba(0, 128, 0, 0.53)'
 }
