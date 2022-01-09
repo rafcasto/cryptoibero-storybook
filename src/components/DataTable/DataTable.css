@@ -1,0 +1,7 @@
+.price_color_up {
+    color: rgba(0, 128, 0, 0.52);
+}
+
+.price_color_down {
+    color: rgba(255, 60, 8, 0.52);
+}

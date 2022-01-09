@@ -7,7 +7,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Avatar from '@mui/material/Avatar';
 import {CryptoChart} from '../CryptoChart/CryptoChart';
-
+import './DataTable.css'
 interface DataTableProps
 {
     data:CryptoMarketInfo[]
@@ -31,10 +31,18 @@ export const DataTable = ({data}:DataTableProps) =>
             <TableCell align="left">{row.symbol}</TableCell>
             <TableCell align="left">{row.sell}</TableCell>
             <TableCell align="left">{row.buy}</TableCell>
-            <TableCell align="left">{row.exchange}</TableCell>
+            <TableCell align="left">
+              <span 
+            className={((row.exchange.includes('-')? 'price_color_down' : 'price_color_up'))}>
+              {row.exchange}</span></TableCell>
             <TableCell align="left" width={170} height={48}>
              
-              <CryptoChart chartInfo={row.chartInfo} width={170} height={48} />
+              <CryptoChart chartInfo={row.chartInfo} 
+                width={170} 
+                height={48} 
+                backgroundColor={((row.exchange.includes('-')? 'rgba(255, 60, 8, 0.52)' : 'rgba(0, 128, 0, 0.52)'))} 
+                borderColor={((row.exchange.includes('-')? 'rgba(255, 60, 8, 0.52)' : 'rgba(0, 128, 0, 0.52)'))} 
+                 />
              
             </TableCell>
           </TableRow>

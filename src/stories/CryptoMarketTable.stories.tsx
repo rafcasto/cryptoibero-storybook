@@ -35,7 +35,7 @@ CryptoMarketTableDefault.args = {
         symbol:'ETH',
         sell:'5,802.01',
         buy:'6,036.79',
-        exchange:'+3.5%',
+        exchange:'-3.5%',
         chartInfo:chartInfo
     },
 ]
