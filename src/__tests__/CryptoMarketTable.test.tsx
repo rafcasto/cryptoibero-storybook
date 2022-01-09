@@ -2,14 +2,21 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import {CryptoMarketTable} from '../components/CryptoMarketTable/CryptoMarketTable';
 import {CryptoMarketInfo} from '../models/MarketDataTemplate'
+
+const labels = ['testUnique']; 
+const data = [1]; 
+const chartInfo = {
+    data:data,
+    labels:labels
+}
 const dataTable = [{
     icon:'cryptoIcon',
     name:'cryptoName',
     symbol:'cryptoSymbol',
     sell:'0',
     buy:'0',
-    exchange:'cryptoExchange'
-
+    exchange:'cryptoExchange',
+    chartInfo:chartInfo
 }]
 
 const theaders = ['icon','name','symbol','sell','buy','exchange'];

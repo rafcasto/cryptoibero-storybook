@@ -6,6 +6,7 @@ import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Avatar from '@mui/material/Avatar';
+import {CryptoChart} from '../CryptoChart/CryptoChart';
 
 interface DataTableProps
 {
@@ -31,6 +32,11 @@ export const DataTable = ({data}:DataTableProps) =>
             <TableCell align="left">{row.sell}</TableCell>
             <TableCell align="left">{row.buy}</TableCell>
             <TableCell align="left">{row.exchange}</TableCell>
+            <TableCell align="left" width={170} height={48}>
+             
+              <CryptoChart chartInfo={row.chartInfo} width={170} height={48} />
+             
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>

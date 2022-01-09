@@ -1,3 +1,4 @@
+import {CryptoChartTemplate} from './CryptoChartTemplate'
 export interface CryptoMarketInfo
 {
     icon:string,
@@ -5,7 +6,8 @@ export interface CryptoMarketInfo
     symbol:string, 
     sell:string,
     buy:string,
-    exchange:string
+    exchange:string,
+    chartInfo:CryptoChartTemplate,
 }
 
 
