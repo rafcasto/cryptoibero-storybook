@@ -1,6 +1,7 @@
 import {CryptoChartTemplate} from './CryptoChartTemplate'
 export interface CryptoMarketInfo
 {
+    id:string,
     icon:string,
     name:string,
     symbol:string, 

@@ -21,6 +21,7 @@ export const CryptoMarketTableDefault = Template.bind({});
 CryptoMarketTableDefault.args = {
     headers : ['','Name','Symbol','Sell','Buy','Last 24h','Last 48h'], 
     data:[{
+        id:"Bitcoin",
         icon:'https://static.easycrypto.com/img/coins/BTC.png',
         name:'Bitcoin',
         symbol:'BTC',
@@ -30,6 +31,7 @@ CryptoMarketTableDefault.args = {
         chartInfo:chartInfo
     },
     {
+        id:"Ethereum",
         icon:'https://static.easycrypto.com/img/coins/ETH.png',
         name:'Ethereum',
         symbol:'ETH',
