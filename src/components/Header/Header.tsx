@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Button } from '../Button/Button';
 import './header.css';
-
+import logo from '../../stories/assets/Logo.png'
 interface HeaderProps {
   user?: {};
   onLogin: () => void;
@@ -30,7 +30,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
             />
           </g>
         </svg>
-        <h1>Acme</h1>
+        <h1>CIB</h1>
       </div>
       <div>
         {user ? (
