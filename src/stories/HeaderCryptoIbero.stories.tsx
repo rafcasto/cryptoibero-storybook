@@ -14,7 +14,7 @@ export default {
 
   export const HeaderTemplate = Template.bind({})
   HeaderTemplate.args = {
-    background:'#148401',
+    background:'hsla(111, 82%, 17%, 1)',
     balances:['BALANCE: $100.00','PORTAFOLIO: $100.00','MINING: $100.OO'],
     settings:['Account','Profile','Logout'],
     color:'#dce800'

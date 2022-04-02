@@ -12,8 +12,6 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import logo from '../../stories/assets/Logo.png'
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 interface headerProps {
   background?:string,
@@ -51,14 +49,7 @@ export  const HeaderCryptoIbero = ({
     <AppBar position="static" style={{ background: background }}>
      <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none',sm: 'flex' , md: 'flex' } }}
-          >
-            
-          </Typography>
+      
           <Box
             component="img"
             sx={{
