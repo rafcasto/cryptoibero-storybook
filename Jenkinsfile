@@ -25,46 +25,6 @@ pipeline {
             }
         }
        
-        stage('package') {
-            agent any
-            steps {
-                script {
-                    dockerImage = docker.build registry
-                }
-            }
-             steps {
-              script {
-                docker.withRegistry( '', registryCredential ) {
-                        dockerImage.push()
-                    }
-                }
-                
-            }
-        }
-        
-
-        stage('deploy'){
-            agent any
-            steps {
-                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-                   sh 'kubectl delete svc storybook-svc -n storybook '
-                   sh 'kubectl delete -n storybook  deployment storybook-dep'
-                }
-                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-                   sh 'kubectl create namespace storybook'
-                }
-                sh 'kubectl apply -f storybook-deployment.yaml -n storybook'
-                sh 'kubectl apply -f storybook-service.yaml -n storybook'
-            }
-        }
-
+     
     }
-    post {
-        // Clean after build
-        always {
-            //cleanWs()
-            deleteDir()
-        }
-    }
-    
 }
