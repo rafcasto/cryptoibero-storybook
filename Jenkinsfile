@@ -1,11 +1,6 @@
 pipeline {
      agent none
-     environment {
-        npm_config_cache = 'npm-cache'
-        registry = "rafcasto/cryptoibero-storybook"
-        registryCredential = 'rafcasto-dockerhub-crls'
-        dockerImage = ''
-    }
+    
     stages { 
         stage('build') {
         agent docker 
