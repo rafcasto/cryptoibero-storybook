@@ -1,7 +1,7 @@
 pipeline {
     agent none
     stages { 
-        stage('build') {
+        stage('npm-build') {
         agent { 
             docker { 
                     image 'rafcasto/nodejs-build'
@@ -11,13 +11,10 @@ pipeline {
             steps {
                 sh 'npm install'
                 sh 'yarn package'
+                sh 'echo $NPM_TOKEN'
+                sh 'npm publish'
             }
-            steps {
-               sh 'echo $NPM_TOKEN'
-               sh 'npm publish'
-            }
+            
         }
-       
-     
     }
 }
