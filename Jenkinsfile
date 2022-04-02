@@ -5,7 +5,7 @@ pipeline {
         agent { 
             docker { 
                     image 'rafcasto/nodejs-build'
-                    args '-e NPM_TOKEN=$NPM_TOKEN'    
+                    args '-e NPM_TOKEN=$NPM_TOKEN -u root:root'    
                 }
             }
             steps {
