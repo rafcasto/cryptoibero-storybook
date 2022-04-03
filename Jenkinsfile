@@ -44,7 +44,8 @@ pipeline {
                     image 'rafcasto/nodejs-build'
                     args '-v /usr/local/bin/kubectl:/usr/local/bin/kubectl  -v /root/.kube/config:/home/node/.kube/config -u root:root'    
                 }
-                steps{
+             }
+            steps{
                     sh 'kubectl get namespaces'
                 }
             }
