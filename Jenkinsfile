@@ -6,8 +6,8 @@ pipeline {
         registryCredential = 'rafcasto-dockerhub-crls'
         dockerImage = ''
     }
-    /*stages { 
-        stage('npm-packge') {
+    stages { 
+    /*  stage('npm-packge') {
         agent { 
             docker { 
                     image 'rafcasto/nodejs-build'
