@@ -1,5 +1,11 @@
 pipeline {
     agent none
+     environment {
+        npm_config_cache = 'npm-cache'
+        registry = "rafcasto/cryptoibero-storybook"
+        registryCredential = 'rafcasto-dockerhub-crls'
+        dockerImage = ''
+    }
     stages { 
         stage('npm-build') {
         agent { 
@@ -15,6 +21,21 @@ pipeline {
                 sh 'npm publish'
             }
             
+        }
+        stage('docker-build'){
+            agent any
+            steps {
+                script {
+                    dockerImage = docker.build registry
+                }
+            }
+            steps {
+              script {
+                docker.withRegistry( '', registryCredential ) {
+                        dockerImage.push()
+                    }
+                }
+            }
         }
     }
 }
