@@ -12,7 +12,6 @@ import {
     Filler
   } from 'chart.js';
 import {Line} from 'react-chartjs-2'
-import { height } from '@mui/system';
 
 
   ChartJS.register(
