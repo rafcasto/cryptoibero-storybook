@@ -23,7 +23,11 @@ pipeline {
             
         }
         stage('docker-build'){
-            agent any
+            agent docker { 
+                    image 'rafcasto/nodejs-build'
+                    args '-v /var/run/docker.sock:/var/run/docker.sock:rw -v /usr/bin/docker:/usr/bin/docker:rw -u root:root'    
+                }
+            }
             steps {
                 script {
                     dockerImage = docker.build registry
