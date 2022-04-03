@@ -6,8 +6,8 @@ pipeline {
         registryCredential = 'rafcasto-dockerhub-crls'
         dockerImage = ''
     }
-    stages { 
-        stage('npm-build') {
+    /*stages { 
+        stage('npm-packge') {
         agent { 
             docker { 
                     image 'rafcasto/nodejs-build'
@@ -22,7 +22,7 @@ pipeline {
             }
             
         }
-        stage('docker-build'){
+        stage('docker-package'){
             agent {
                 docker { 
                     image 'rafcasto/nodejs-build'
@@ -35,6 +35,17 @@ pipeline {
                     docker.withRegistry( '', registryCredential ) {
                         dockerImage.push()
                     }
+                }
+            }
+        }*/
+        stage('kub8-deployment'){
+             agent {
+                docker { 
+                    image 'rafcasto/nodejs-build'
+                    args '-v /usr/local/bin/kubectl:/usr/local/bin/kubectl  -v /root/.kube/config:/home/node/.kube/config -u root:root'    
+                }
+                steps{
+                    sh 'kubectl get namespaces'
                 }
             }
         }
