@@ -7,7 +7,7 @@ pipeline {
         dockerImage = ''
     }
     stages { 
-    /*  stage('npm-packge') {
+      stage('npm-packge') {
         agent { 
             docker { 
                     image 'rafcasto/nodejs-build'
@@ -37,7 +37,7 @@ pipeline {
                     }
                 }
             }
-        }*/
+        }
         stage('kub8-deployment'){
             agent {
                 docker { 
