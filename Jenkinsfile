@@ -51,7 +51,7 @@ pipeline {
                    sh 'kubectl delete -n storybook  deployment storybook-dep --kubeconfig=/home/node/.kube/config'
                  }
                 sh 'kubectl apply -f storybook-deployment.yaml -n storybook --kubeconfig=/home/node/.kube/config'
-                sh 'kubectl apply -f storybook-service.yaml -n storybook -kubeconfig=/home/node/.kube/config'
+                sh 'kubectl apply -f storybook-service.yaml -n storybook --kubeconfig=/home/node/.kube/config'
             }
         }
     }
