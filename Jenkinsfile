@@ -46,7 +46,12 @@ pipeline {
                 }
             }
             steps{
-                    sh 'kubectl get namespaces --kubeconfig=/home/node/.kube/config'
+                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
+                   sh 'kubectl delete svc storybook-svc -n storybook --kubeconfig=/home/node/.kube/config'
+                   sh 'kubectl delete -n storybook  deployment storybook-dep --kubeconfig=/home/node/.kube/config'
+                 }
+                sh 'kubectl apply -f storybook-deployment.yaml -n storybook --kubeconfig=/home/node/.kube/config'
+                sh 'kubectl apply -f storybook-service.yaml -n storybook -kubeconfig=/home/node/.kube/config'
             }
         }
     }
