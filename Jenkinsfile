@@ -46,7 +46,7 @@ pipeline {
                 }
             }
             steps{
-                    sh 'kubectl get namespaces'
+                    sh 'kubectl get namespaces --kubeconfig=/home/node/.kube/config'
             }
         }
     }
