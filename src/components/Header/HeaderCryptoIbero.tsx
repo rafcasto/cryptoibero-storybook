@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import logo from '../../stories/assets/Logo.png'
+
 
 interface headerProps {
   background?:string,
@@ -50,14 +50,14 @@ export  const HeaderCryptoIbero = ({
      <Container maxWidth="xl">
         <Toolbar disableGutters>
       
-          <Box
-            component="img"
-            sx={{
-            height: 85,
-            }}
-            alt="Your logo."
-            src={logo}
-        />
+        <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+          >
+            LOGO
+          </Typography>
        
          
           
