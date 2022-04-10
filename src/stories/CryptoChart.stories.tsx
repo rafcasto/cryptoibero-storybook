@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import {CryptoChart} from '../components/CryptoChart/CryptoChart'
+import {CryptoChart} from '../components/CryptoChart/CryptoChart';
 
 export default {
     title: 'example/chart',
