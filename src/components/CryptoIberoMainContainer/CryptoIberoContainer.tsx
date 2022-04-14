@@ -14,7 +14,7 @@ const Item = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(1),
  
     
-    height:250,
+    height:350,
     color: theme.palette.text.secondary,
   }));
 
@@ -29,7 +29,7 @@ export const CryptoIberoContainer = ({
   ...props
 }:CryptoIberoContainerProps) => {
     return (
-<Container maxWidth="md" style={{paddingTop:150}}>
+<Container maxWidth="lg" style={{paddingTop:150}}>
 <Grid container rowSpacing={1}  spacing={2}>
       {menus.map((menu) => (
         <Grid item xs={12} sm={4} md={4} key={menu.title}>

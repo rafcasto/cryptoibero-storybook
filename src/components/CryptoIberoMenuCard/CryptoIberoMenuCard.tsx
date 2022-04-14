@@ -30,6 +30,7 @@ interface CryptoIberoMenuCardProps {
 const StyledCard = styled(Card)`
   ${({ theme }) => `
   cursor: pointer;
+  border-radius: 25px;
   background-color: ${theme.palette.primary.main};
   transition: ${theme.transitions.create(['background-color', 'transform'], {
     duration: theme.transitions.duration.standard,
@@ -56,7 +57,7 @@ export  const CryptoIberoMenuCard = ({
             <StyledCard>
     <Card style={{background:background
     
-    }} sx={{ minWidth: 250, maxWidth: 300 }}>
+    }}  md={{ minWidth: 300, maxWidth: 400 }} >
       <CardContent>
          
          

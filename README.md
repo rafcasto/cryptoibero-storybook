@@ -30,6 +30,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+As a pre-requesite the following environement variable needs to be set in the system, example for linux: 
+
+> export NPM_TOKEN=npm_sffsdfaf
+
 ### `yarn storybook`
 
 Runs the app in the development mode.\
