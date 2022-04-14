@@ -55,9 +55,7 @@ export  const CryptoIberoMenuCard = ({
         <MuiThemeProvider theme={customTheme}>
         <ThemeProvider theme={customTheme}>
             <StyledCard>
-    <Card style={{background:background
-    
-    }}  md={{ minWidth: 300, maxWidth: 400 }} >
+    <Card style={{background:background}} >
       <CardContent>
          
          
