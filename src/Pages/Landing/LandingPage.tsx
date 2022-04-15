@@ -2,6 +2,7 @@ import * as React from 'react';
 import {HeaderCryptoIbero} from '../../components/Header/HeaderCryptoIbero';
 import {CryptoIberoContainer} from '../../components/CryptoIberoMainContainer/CryptoIberoContainer'
 import {CryptoIberoMenuCardTemplate} from '../../models/CryptoIberoMenuCardTemplate'
+
 import './Landing.css'
 interface landingProps {
     background?:string,
@@ -12,6 +13,8 @@ interface landingProps {
     backgroundImage:string,
     cardBackground:string
   }
+
+
 
 export const LandingPage = ({
     background,
@@ -29,13 +32,15 @@ export const LandingPage = ({
         backgroundSize:'cover',
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
-  
         height: '90vh'
       };
     return (
         <div className='Login-component' style={sectionStyle} >
         <HeaderCryptoIbero balances={balances} background={background} settings={settings} color={color} />
-        <CryptoIberoContainer cardBackground={cardBackground} menus={menus}  />
+        <div style={{justifyContent:"center", height:"100vh", display:"flex", alignItems:"center", flexWrap:"wrap" }}>
+        <CryptoIberoContainer  cardBackground={cardBackground} menus={menus}  />
+        </div>
+       
         </div>
     )
 }
