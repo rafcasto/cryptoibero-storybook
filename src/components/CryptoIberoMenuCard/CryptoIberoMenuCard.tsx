@@ -31,7 +31,7 @@ interface CryptoIberoMenuCardProps {
 const StyledCard = styled(Card)`
   ${({ theme }) => `
   cursor: pointer;
-  border-radius: 25px;
+  border-radius: 15px;
   background-color: ${theme.palette.primary.main};
   transition: ${theme.transitions.create(['background-color', 'transform'], {
     duration: theme.transitions.duration.standard,
