@@ -54,9 +54,8 @@ export  const HeaderCryptoIbero = ({
             variant="h6"
             noWrap
             component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            LOGO
+            <img src="http://pupusasgame.com/ibero/img/logo.png" width="40px" />
           </Typography>
        
          
