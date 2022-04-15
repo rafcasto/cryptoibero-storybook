@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -14,7 +15,7 @@ import {
 } from '@mui/material/styles';
 import { deepPurple, green } from '@mui/material/colors';
 import Avatar from '@mui/material/Avatar';
-
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 const customTheme = createTheme({
   palette: {
     primary: {
@@ -56,13 +57,21 @@ export  const CryptoIberoMenuCard = ({
         <ThemeProvider theme={customTheme}>
             <StyledCard>
     <Card style={{background:background}} >
-      <CardContent>
-         
-         
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-         
+      <CardContent>         
+
+          
+      <Grid container sx={{ color: 'text.primary' }}>
+      <Grid item xs={11}>
+          <Typography sx={{ fontSize: 14 }} component="div" color="text.secondary" gutterBottom>
            {info.description}
+           
            </Typography>
+           </Grid>
+           <Grid item xs={1}>
+       <img src={info.icon} width="40px" />
+        
+      </Grid>
+        </Grid>
         <Typography variant="h5" component="div">
             {info.title}
         </Typography>
