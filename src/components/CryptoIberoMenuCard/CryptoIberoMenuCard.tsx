@@ -13,13 +13,13 @@ import {
   createTheme,
   ThemeProvider as MuiThemeProvider,
 } from '@mui/material/styles';
-import { deepPurple, green } from '@mui/material/colors';
+import { deepPurple, green, grey, yellow } from '@mui/material/colors';
 import Avatar from '@mui/material/Avatar';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 const customTheme = createTheme({
   palette: {
     primary: {
-      main: green[500],
+      main: green[900],
     },
   },
 });
