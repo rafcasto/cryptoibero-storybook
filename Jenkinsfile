@@ -5,7 +5,7 @@ pipeline {
         registry = "rafcasto/cryptoibero-storybook"
         registryCredential = 'rafcasto-dockerhub-crls'
         dockerImage = ''
-         HOME = '.'
+       
     }
     stages { 
       stage('npm-packge') {

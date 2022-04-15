@@ -30,6 +30,9 @@ interface CryptoIberoMenuCardProps {
 
 const StyledCard = styled(Card)`
   ${({ theme }) => `
+  border: 1px solid;
+ 
+  box-shadow: 3px 3px 3px 3px green;
   cursor: pointer;
   border-radius: 15px;
   background-color: ${theme.palette.primary.main};
@@ -42,6 +45,8 @@ const StyledCard = styled(Card)`
   }
   `}
 `;
+
+
 
 
 export  const CryptoIberoMenuCard = ({
