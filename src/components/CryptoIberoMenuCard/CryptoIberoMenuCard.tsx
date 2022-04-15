@@ -61,13 +61,13 @@ export  const CryptoIberoMenuCard = ({
 
           
       <Grid container sx={{ color: 'text.primary' }}>
-      <Grid item xs={11}>
+      <Grid item xs={10} md={11}>
           <Typography sx={{ fontSize: 14 }} component="div" color="text.secondary" gutterBottom>
            {info.description}
            
            </Typography>
            </Grid>
-           <Grid item xs={1}>
+           <Grid item xs={2} md={1}>
        <img src={info.icon} width="40px" />
         
       </Grid>
