@@ -58,5 +58,5 @@ export default {
         icon:'https://cdn-icons-png.flaticon.com/512/3345/3345142.png'
     }],
     backgroundImage:'https://www.techporn.ph/wp-content/uploads/NTT-DOCOMO-Renewable-Enegry-PR.jpg',
-    cardBackground:"#d1ebb0"
+    cardBackground:"#80e27e"
   }
