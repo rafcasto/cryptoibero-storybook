@@ -16,6 +16,7 @@ pipeline {
                 }
             }
             steps {
+                sh 'rm -rf node_modules'
                 sh 'npm install'
                 sh 'yarn package'
                 sh 'echo $NPM_TOKEN'

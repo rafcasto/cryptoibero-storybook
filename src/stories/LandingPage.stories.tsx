@@ -11,7 +11,7 @@ export default {
   const Template: ComponentStory<typeof LandingPage> = (args) => <LandingPage {...args} />;
   export const defaultLandingPageTemplate = Template.bind({}); 
   defaultLandingPageTemplate.args = {
-    background:'hsla(111, 82%, 17%, 1)',
+    background:'#087f23',
     balances:['BALANCE: $100.00','PORTAFOLIO: $100.00','MINING: $100.00'],
     settings:['Account','Profile','Logout'],
     color:'#dce800',
