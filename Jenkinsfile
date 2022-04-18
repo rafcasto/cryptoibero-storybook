@@ -11,7 +11,7 @@ pipeline {
       stage('npm-packge') {
         agent { 
             docker { 
-                    image 'node:current-alpine3.14'
+                    image 'rafcasto/nodejs-build'
                     args '-e NODE_OPTIONS=--max_old_space_size=4096 -e NPM_TOKEN=$NPM_TOKEN -u root:root'    
                 }
             }
@@ -19,15 +19,15 @@ pipeline {
                 sh 'npm cache clean --force'
                 sh 'npm install'
                 sh 'yarn package'
-                sh 'echo $NPM_TOKEN'
-                sh 'npm publish'
+               // sh 'echo $NPM_TOKEN'
+               // sh 'npm publish'
             }
             
         }
         stage('docker-package'){
             agent {
                 docker { 
-                    image 'node:current-alpine3.14'
+                    image 'rafcasto/nodejs-build'
                     args '-v /var/run/docker.sock:/var/run/docker.sock:rw -v /usr/bin/docker:/usr/bin/docker:rw -u root:root'    
                 }
             }
@@ -43,7 +43,7 @@ pipeline {
         stage('kub8-deployment'){
             agent {
                 docker { 
-                    image 'node:current-alpine3.14'
+                    image 'rafcasto/nodejs-build'
                     args '-v /usr/local/bin/kubectl:/usr/local/bin/kubectl  -v /root/.kube/config:/home/node/.kube/config -u root:root'    
                 }
             }
