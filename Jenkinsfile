@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
      environment {
         npm_config_cache = 'npm-cache'
         registry = "rafcasto/cryptoibero-storybook"
