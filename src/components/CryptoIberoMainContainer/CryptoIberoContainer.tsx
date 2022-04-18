@@ -31,7 +31,7 @@ export const CryptoIberoContainer = ({
 }:CryptoIberoContainerProps) => {
     return (
 <Container   maxWidth="lg" >
-<Grid  container rowSpacing={2}  spacing={2}>
+<Grid  container rowSpacing={2}  spacing={3}>
       {menus.map((menu) => (
         <Grid item xs={12} sm={4} md={4} key={menu.title}>
         
