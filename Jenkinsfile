@@ -16,6 +16,7 @@ pipeline {
                 }
             }
             steps {
+                sh 'npm cache clean --force'
                 sh 'npm install'
                 sh 'yarn package'
                 sh 'echo $NPM_TOKEN'
