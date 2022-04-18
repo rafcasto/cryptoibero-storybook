@@ -1,4 +1,4 @@
-FROM rafcasto/nodejs-build
+FROM node:current-alpine3.14
 
 # This is optional. Sets the level of logging that you see
 ENV NPM_CONFIG_LOGLEVEL warn
