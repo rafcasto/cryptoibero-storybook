@@ -12,7 +12,7 @@ pipeline {
         agent { 
             docker { 
                     image 'rafcasto/nodejs-build'
-                    args '--memory=3072m -e --max-old-space-size=8192 -e NPM_TOKEN=$NPM_TOKEN -u root:root'    
+                    args '-e NODE_OPTIONS=--max_old_space_size=4096 -e NPM_TOKEN=$NPM_TOKEN -u root:root'    
                 }
             }
             steps {
