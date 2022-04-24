@@ -7,6 +7,7 @@ import {CryptoChart} from './components/CryptoChart/CryptoChart'
 import {HeaderCryptoIbero} from './components/Header/HeaderCryptoIbero'
 import {CryptoIberoContainer} from './components/CryptoIberoMainContainer/CryptoIberoContainer'
 import {CryptoIberoMenuCard} from './components/CryptoIberoMenuCard/CryptoIberoMenuCard'
+import {SignInSide} from './components/SignInSide/SignInSide'
 export {
     Button
     ,Header
@@ -17,4 +18,5 @@ export {
     ,CryptoIberoContainer
     ,HeaderCryptoIbero
     ,CryptoIberoMenuCard
+    ,SignInSide
 }
