@@ -17,9 +17,9 @@ pipeline {
             }
             steps {
                 sh 'npm cache clean --force'
-                sh 'npm install'
+                sh 'npm install --legacy-peer-deps'
                 sh 'yarn package'
-               // sh 'echo $NPM_TOKEN'
+                sh 'echo $NPM_TOKEN'
                // sh 'npm publish'
             }
             
