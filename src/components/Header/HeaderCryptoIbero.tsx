@@ -46,7 +46,9 @@ export  const HeaderCryptoIbero = ({
   };
 
   return (
-    <AppBar position="static" style={{ background: background }}>
+    <AppBar position="static" style={{ 
+      backgroundColor: background 
+      }}>
      <Container maxWidth="xl">
         <Toolbar disableGutters>
       

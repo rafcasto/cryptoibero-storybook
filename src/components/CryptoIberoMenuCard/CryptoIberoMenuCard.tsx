@@ -21,6 +21,9 @@ const customTheme = createTheme({
     primary: {
       main: green[900],
     },
+    secondary:{
+      main: green['A400']
+    }
   },
 });
 interface CryptoIberoMenuCardProps {
@@ -61,7 +64,7 @@ export  const CryptoIberoMenuCard = ({
         <MuiThemeProvider theme={customTheme}>
         <ThemeProvider theme={customTheme}>
             <StyledCard>
-    <Card style={{background:background}} >
+    <Card style={{backgroundColor:background}} >
       <CardContent>         
 
           
